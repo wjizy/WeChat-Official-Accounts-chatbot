@@ -6,7 +6,7 @@ class chat
   		$signature = $_GET["signature"];
         $timestamp = $_GET["timestamp"];
         $nonce = $_GET["nonce"];	
-		$token = 'lingpai';n//令牌
+		$token = 'lingpai';//令牌
 		$tmpArr = array($token, $timestamp, $nonce);
 		sort($tmpArr, SORT_STRING);
 		$tmpStr = implode( $tmpArr );
@@ -36,6 +36,7 @@ class chat
 		file_put_contents('receivelog.xml',$result);
 		echo $result;//发给微信服务器
 	}
+	
 	//返回消息
 	public function receiveText($obj)
 	{
